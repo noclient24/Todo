@@ -42,19 +42,21 @@ const Navbar = () => {
             </button>
 
             {/* Logo */}
+            <Link href="/">
             <div className="flex-shrink-0 flex items-center ml-4 sm:ml-0">
               <i className="fa-solid fa-tasks text-teal-400 text-2xl mr-2"></i>
               <span className="text-xl font-bold">WorkManager</span>
             </div>
+            </Link>
 
             {/* Desktop menu */}
             <div className="hidden sm:ml-6 sm:flex sm:space-x-4">
-               
-    
-              <a  className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-800 text-white hover:bg-teal-600">
+
+
+              <Link href="/" className="inline-flex hover:cursor-pointer items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-800 text-white hover:bg-teal-600">
                 <i className="fa-solid fa-house mr-2"></i> Home
-              </a>
-           
+              </Link>
+
               <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-800">
                 <i className="fa-solid fa-plus-circle mr-2"></i> Add Task
               </a>
@@ -66,12 +68,16 @@ const Navbar = () => {
 
           {/* Right side */}
           <div className="hidden sm:flex sm:items-center sm:space-x-4">
-            <a href="#" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800">
+
+            <Link href="./login" className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800">
               <i className="fa-solid fa-sign-in-alt mr-1"></i> Login
-            </a>
-            <a href="#" className="bg-teal-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-500 transition">
+            </Link>
+
+
+            <Link href="./signup" className="bg-teal-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-500 transition">
               <i className="fa-solid fa-user-plus mr-1"></i> Sign Up
-            </a>
+            </Link >
+
 
             {/* User Profile */}
             <div className="ml-3 relative">
@@ -93,9 +99,9 @@ const Navbar = () => {
         className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} bg-gray-900 border-t border-gray-700`}
       >
         <div className="pt-2 pb-3 space-y-1">
-          <a href="#" className="block pl-3 pr-4 py-2 border-l-4 border-teal-500 bg-gray-800 text-white text-base font-medium">
-            <i className="fa-solid fa-house mr-3"></i> Home
-          </a>
+          <Link href="/" className="inline-flex hover:cursor-pointer items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-800 text-white hover:bg-teal-600">
+            <i className="fa-solid fa-house mr-2"></i> Home
+          </Link>
           <a href="#" className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-300 hover:bg-gray-800 text-base font-medium">
             <i className="fa-solid fa-plus-circle mr-3"></i> Add Task
           </a>
@@ -113,12 +119,16 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mt-3 space-y-1 px-2">
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">
-              <i className="fa-solid fa-sign-in-alt mr-3"></i> Login
-            </a>
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">
-              <i className="fa-solid fa-user-plus mr-3"></i> Sign Up
-            </a>
+            <Link href="./login">
+              <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">
+                <i className="fa-solid fa-sign-in-alt mr-3"></i> Login
+              </span>
+            </Link>
+            <Link href="./login">
+              <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-800">
+                <i className="fa-solid fa-user-plus mr-3"></i> Sign Up
+              </span>
+            </Link>
           </div>
         </div>
       </div>
