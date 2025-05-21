@@ -1,6 +1,8 @@
+import { ConnetDB } from "@/app/helper/bd";
 import { NextResponse } from "next/server";
 
-export const GET=()=>{
+export const GET=async()=>{
+    await ConnetDB()
     const students = [
         { name: "Ayesha Khan", phone: "0301-1234567", course: "JavaScript" },
         { name: "Bilal Ahmed", phone: "0302-2345678", course: "Java" },
