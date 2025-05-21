@@ -1,17 +1,15 @@
-import mongoose  from "mongoose";
+import mongoose from "mongoose";
 
+export const ConnectDB = async () => {
+  try {
+    const { connection } = await mongoose.connect(process.env.MONGODB_URL, {
+      dbName: "work_Manager"  // Correct option name
+    });
+    console.log("==============================================================");
+    console.log("Connection successful to database:", connection.name);
+    console.log("Host:", connection.host);
+  } catch (error) {
+    console.error("Database connection error:", error);
 
-
-export const  ConnetDB=async()=>{
-try {
-
-    
-    const {coonection}=await mongoose.connect(process.env.MONGODB_URL,{
-        bd_Name:"work_Manager"
-    })
-    console.log("==============================================================")
-    console.log("Connection successfully",coonection)
-} catch (error) {
-    console.log(error)
-}
-}
+  }
+};
