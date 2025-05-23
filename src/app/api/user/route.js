@@ -1,7 +1,7 @@
-import { ConnectDB } from "@/app/helper/bd";
+import { ConnectDB } from "@/helper/bd";
 import { NextResponse } from "next/server";
 
-export const GET=async()=>{
+export const GET = async () => {
     await ConnectDB()
     const students = [
         { name: "Ayesha Khan", phone: "0301-1234567", course: "JavaScript" },
@@ -14,23 +14,29 @@ export const GET=async()=>{
         { name: "Saad Farooq", phone: "0308-8901234", course: "TypeScript" },
         { name: "Hina Tariq", phone: "0309-9012345", course: "Angular" },
         { name: "Ali Nawaz", phone: "0310-0123456", course: "PHP" }
-      ];
-  return NextResponse.json(students)      
+    ];
+    return NextResponse.json(students)
 }
 
 
 
-export const DELETE=()=>{
 
-    
-        console.log("The Data Has been Delete Please Give")
-        return NextResponse.json(
-            {
-                message:"Deleted !",
-                status:true
-            }
-        )
-        
-    
+export const POST=async(request)=>{
+    const {name,email,password,about,ProfileURL}=request.json()
+}
+
+
+export const DELETE = () => {
+
+
+    console.log("The Data Has been Delete Please Give")
+    return NextResponse.json(
+        {
+            message: "Deleted !",
+            status: true
+        }
+    )
+
+
 
 }
