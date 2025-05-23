@@ -1,9 +1,11 @@
 import mongoose, { Schema } from "mongoose"
 
+
 const userschema=new Schema({
 
     name:String,
     email:{
+        unique:true,
         type:String,
         required:[true,"Email required !"]
     },
@@ -17,4 +19,4 @@ const userschema=new Schema({
 })
 
 
-export const User=mongoose.models.User||mongoose.model("User",userschema)
+export const UserData=mongoose.models.User||mongoose.model("UserData",userschema)

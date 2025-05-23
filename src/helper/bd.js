@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import {User} from "@/model/user"
+
 export const ConnectDB = async () => {
   try {
      const connectionString =process.env.MONGODB_URL
@@ -12,14 +12,8 @@ export const ConnectDB = async () => {
       });
   
       
-      const userPOst=new User({
-        name:"abdullah",
-        email:"abdullah@gmail.com",
-        password:"abdullah",
-        about:"this is a about"
-      })
-
-      await userPOst.save()
+     
+ 
       console.log("user Has created")
       console.log("==============================================================");
       console.log("Connection successful to database");
