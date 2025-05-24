@@ -19,4 +19,11 @@ const userschema=new Schema({
 })
 
 
-export const UserData=mongoose.models.User||mongoose.model("UserData",userschema)
+let UserData;
+if (mongoose.models.UserData) {
+    UserData = mongoose.model('UserData');
+} else {
+    UserData = mongoose.model('UserData', userschema);
+}
+
+export { UserData };
