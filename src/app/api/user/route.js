@@ -8,7 +8,7 @@ export const GET = async (request) => {
 
    let users=[]
     try {
-      users=await UserData.find()
+      users=await UserData.find().select("-password")
         return NextResponse.json(users)
     } catch (error) {
          console.log(error)

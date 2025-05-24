@@ -31,7 +31,7 @@ export const DELETE = async (request, { params }) => {
 export const GET = async (request, { params }) => {
     const { userid } = params;
     try {
-        const user = await UserData.findOne(userid)
+        const user = await UserData.findOne(userid).select("-password")
         return NextResponse.json(user)
     } catch (error) {
         return NextResponse.json({
@@ -66,7 +66,6 @@ export const PUT = async (request, { params }) => {
         // Save updated user
         const updatedUser = await user.save();
 
-        // Create response without password
         const userResponse = {
             _id: updatedUser._id,
             name: updatedUser.name,
